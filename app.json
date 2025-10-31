@@ -2,7 +2,12 @@
     "name": "MCP",
     "description": "MCP",
     "repository": "https://github.com/heroku-reference-apps/mcp-code-exec-python",
-    "env": {},
+    "env": {
+        "TARGET_APP_NAME": {
+            "description": "ENTER THE NAME OF THE TARGET APP HERE",
+			"value":"example-main-app"
+        }
+	},
 	"addons": [],
     "buildpacks": [
         {

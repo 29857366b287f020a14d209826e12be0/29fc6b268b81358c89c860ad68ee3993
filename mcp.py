@@ -6,7 +6,7 @@ import re
 url = os.getenv("INFERENCE_URL")+'/v1/agents/heroku'
 
 INFERENCE_KEY = os.getenv("INFERENCE_KEY")
-TARGET_APP_NAME = os.getenv("HEROKU_APP_NAME").replace("target-", "")
+TARGET_APP_NAME = os.getenv("TARGET_APP_NAME")
 headers = {
   'Authorization': 'Bearer ' + INFERENCE_KEY,
   'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36',
