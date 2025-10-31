@@ -3,7 +3,7 @@ import os
 import base64
 import re
 
-url = os.getenv("INFERENCE_URL")+'v1/agents/heroku'
+url = os.getenv("INFERENCE_URL")+'/v1/agents/heroku'
 
 INFERENCE_KEY = os.getenv("INFERENCE_KEY")
 TARGET_APP_NAME = os.getenv("HEROKU_APP_NAME").replace("target-", "")
