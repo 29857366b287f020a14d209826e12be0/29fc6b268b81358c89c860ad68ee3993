@@ -35,7 +35,12 @@
                        "size": "standard-1x",            "type": "web"
         }
     ],
-    "addons": [],
+	"addons": [
+    {
+      "plan": "heroku-inference:claude-4-5-sonnet-latest",
+      "as": "INFERENCE_LLM"
+    }
+  ],
     "buildpacks": [
         {
             "url": "heroku/python"

